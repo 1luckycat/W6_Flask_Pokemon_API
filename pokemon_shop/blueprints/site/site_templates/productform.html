@@ -1,0 +1,51 @@
+<form action="" method='POST' class="row g-3">
+    {{ form.hidden_tag() }}
+    <div class="col-12">
+        {{ form.name.label }}
+        {{ form.name(class='form-control mt-2', placeholder='Pikachu') }}
+        {% for error in form.name.errors %}
+            <span class="err-msg">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div class="col-12">
+        {{ form.image.label }}
+        {{ form.image(class='form-control mt-2') }}
+    </div>
+    <div class="col-12">
+        {{ form.ability.label }}
+        {{ form.ability(class='form-control mt-2', placeholder='Static') }}
+    </div>
+    <div class="col-6">
+        {{ form.types.label }}
+        {{ form.types(class='form-control mt-2', placeholder='Electric') }}
+    </div>
+    <div class="col-6">
+        {{ form.height.label }}
+        {{ form.height(class='form-control mt-2', placeholder='4') }}
+    </div>
+    <div class="col-6">
+        {{ form.weight.label }}
+        {{ form.weight(class='form-control mt-2', placeholder='60') }}
+    </div>
+    <div class="col-12">
+        {{ form.price.label }}
+        {{ form.price(class='form-control mt-2', placeholder='$20.99') }}
+        {% for error in form.price.errors %}
+            <span class="err-msg">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div class="col-12">
+        {{ form.quantity.label }}
+        {{ form.quantity(class='form-control mt-2', placeholder='50') }}
+        {% for error in form.quantity.errors %}
+            <span class="err-msg">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div class="col-12">
+        {{ form.submit(class='btn productform-button btn-outline-dark') }}
+    </div>
+</form>
+
+
+
+

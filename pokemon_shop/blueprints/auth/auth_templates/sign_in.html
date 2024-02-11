@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row mt-5 p-5 shadow rounded border w-75">
+        <div class="row d-flex">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e20251bc-43b6-4546-911a-c28c81469a12/d743hxy-46c1c24c-40f4-4853-94f2-bc76c1f88177.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UyMDI1MWJjLTQzYjYtNDU0Ni05MTFhLWMyOGM4MTQ2OWExMlwvZDc0M2h4eS00NmMxYzI0Yy00MGY0LTQ4NTMtOTRmMi1iYzc2YzFmODgxNzcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0bm9mPpXtBEgV5tDpjjK1Y6nODtOoAw8ke0bmKlLJrg" class='img-fluid rounded' alt="" srcset="">
+        </div>
+        <div class="col d-flex justify-content-center">
+            <form action="" class="row g-3" method="POST">
+                {{ form.hidden_tag() }}
+                <h2 class="d-flex justify-content-center mt-4">Log into your Account</h2>
+                <div class="col-6">
+                    {{ form.email.label }}
+                    {{ form.email(class='form-control mt-2', placeholder='ash_ketchumall@gmail.com' ) }}
+                    {% for error in form.email.errors %}
+                        <span class="err-msg"> {{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-6">
+                    {{ form.password.label }}
+                    {{ form.password(class='form-control mt-2', placeholder='Password' ) }}
+                    {% for error in form.password.errors %}
+                        <span class="err-msg"> {{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col d-flex justify-content-center">
+                    {{ form.submit(class='btn signin-button mt-2 btn-outline-dark') }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
